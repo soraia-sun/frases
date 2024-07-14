@@ -5,7 +5,7 @@ import { ubuntu } from "@/app/ui/fonts"
 
 export const metadata: Metadata = {
   title: "Gerador de Frases",
-  description: "Gerador de frases em bilhetes numerados.",
+  description: "Gerador de frases em bilhetes numerados",
 }
 
 export default function RootLayout({
