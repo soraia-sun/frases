@@ -43,7 +43,7 @@ export default function Home() {
           </button>
         </form>
       </main>
-      {groups.map(g => <MsgPage copies={copies || 1} group={g} title={title} />)}
+      {groups.map((g, i) => <MsgPage key={`group${i}`} copies={copies || 1} group={g} title={title} />)}
     </>
   )
 }
