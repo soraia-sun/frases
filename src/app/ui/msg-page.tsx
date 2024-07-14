@@ -23,21 +23,21 @@ function inferRefSize(msg: Message): string {
 export function MsgCard({ index, title, msg }: Readonly<{ index: number, title: string, msg: Message }>) {
   let bodySize = msg.size ? `${msg.size}pt` : inferBodySize(msg)
   let refSize = msg.refSize ? `${msg.refSize}pt` : inferRefSize(msg)
-  let body = msg.content.reduce((a, b) => a + "\n" + b)
+  let body = msg.content.join("\n")
   return (
     <div className={styles.msg}>
-      <p className={`${styles["msg-title"]} ${ubuntuCondensed.className}`}>
+      <p className={`${ubuntuCondensed.className} ${styles["msg-title"]} `}>
         {title}
       </p>
 
-      <p className={`${styles["msg-body"]} ${ubuntuCondensed.className}`} style={{ fontSize: bodySize }}>
+      <p className={`${ubuntuCondensed.className} ${styles["msg-body"]} `} style={{ fontSize: bodySize }}>
         {body}
       </p>
 
-      <p className={`${styles["msg-footer"]} ${ubuntuCondensed.className}`} style={{ fontSize: refSize }}>
+      <p className={`${ubuntuCondensed.className} ${styles["msg-footer"]} `} style={{ fontSize: refSize }}>
         {msg.reference}
       </p>
-      <p className={`${styles["msg-index"]} ${ubuntu.className}`}>{index}</p>
+      <p className={`${ubuntu.className} ${styles["msg-index"]} `}>{index}</p>
     </div>
   )
 }
