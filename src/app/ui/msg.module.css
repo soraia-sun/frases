@@ -35,7 +35,7 @@
 }
 
 .msg-body {
-  margin: 0 8pt 0 0;
+  margin: 0 8pt 0 8pt;
   text-align: center;
   position: absolute;
   top: 50%;
