@@ -2,6 +2,7 @@ export type Message = {
     content: string[],
     reference: string,
     size?: number,
+    refSize?: number,
 }
 
 export type MsgGroup = Message[]
@@ -23,11 +24,14 @@ export function parse(rawmsg: string): MsgGroup[] {
                 if (lines.length == 0)
                     return null
                 let last = lines.at(-1)
-                if (last?.match(/^\d+$/)) {
+                let match = last?.match(/^(\d+)( (\d+))?$/)
+                if (match != null) {
+                    let [_, size, _skip, refSize] = match
                     return {
                         content: lines.slice(0, -2),
                         reference: lines.at(-2) || "",
-                        size: parseInt(last)
+                        size: parseInt(size),
+                        refSize: parseInt(refSize),
                     }
                 }
                 let content = lines.slice(0, -1)

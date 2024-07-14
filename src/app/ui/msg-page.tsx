@@ -14,13 +14,15 @@ function inferBodySize(msg: Message): string {
 function inferRefSize(msg: Message): string {
   let n = msg.reference.length
   if (n > 42)
+    return "8pt"
+  if (n > 23)
     return "10pt"
   return "12pt"
 }
 
 export function MsgCard({ index, title, msg }: Readonly<{ index: number, title: string, msg: Message }>) {
   let bodySize = msg.size ? `${msg.size}pt` : inferBodySize(msg)
-  let refSize = inferRefSize(msg)
+  let refSize = msg.refSize ? `${msg.refSize}pt` : inferRefSize(msg)
   let body = msg.content.reduce((a, b) => a + "\n" + b)
   return (
     <div className={styles.msg}>
