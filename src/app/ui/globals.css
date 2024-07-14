@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+p {
+  @apply mb-4;
+}
+
+.bg-primary {
+  @apply bg-gradient-to-tr from-cyan-500 to-sky-500;
+}
+
+.bg-primary:active {
+  @apply bg-gradient-to-tr from-cyan-700 to-sky-700;
+}
