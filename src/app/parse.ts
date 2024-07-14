@@ -15,7 +15,7 @@ export function parse(rawmsg: string): MsgGroup[] {
     return rawmsg
         .trim()
         .replaceAll(/\n\n+/g, "\n\n")
-        .split("...")
+        .split("///")
         .map(g => g
             .trim()
             .split("\n\n")

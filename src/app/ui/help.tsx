@@ -8,7 +8,7 @@ Só sei que nada sei.
 Sócrates
 20
 
-...
+///
 
 Na natureza nada se cria, nada se perde, tudo se transforma.
 Antoine Laurent Lavoisier
@@ -18,7 +18,7 @@ A alegria não chega apenas no encontro do achado, mas faz parte do processo da 
 Paulo Freire - "Pedagogia da Autonomia"
 11
 
-...
+///
 
 Amai os vossos inimigos; fazei o bem aos que vos odeiam e orai pelos que vos perseguem e caluniam.
 Jesus - Evangelho de Mateus 5:44
@@ -34,11 +34,11 @@ export function Help({ show }: Readonly<{ show: boolean }>) {
         Para inserir as frases, elas devem seguir o seguinte formato:
       </p>
       <ul className="list-disc ml-8 mb-4">
-        <li className="list-item">Em uma única linha, a frase em si;</li>
+        <li>Em uma única linha, a frase em si;</li>
         <li>Na linha imediatamente abaixo, a referência da frase (autor/livro);</li>
         <li>Opcionalmente na linha imediatamente abaixo, um tamanho de fonte;</li>
         <li>Uma linha em branco para separar da próxima frase;</li>
-        <li>Para separar grupos de cada frase, insira uma linha contendo apenas três pontos (...) entre elas.</li>
+        <li>Para separar grupos de cada frase, insira uma linha contendo apenas três barras (///) entre elas.</li>
       </ul>
       <p>
         Se o tamanho de fonte não for especificado, o gerador vai tentar adivinhar um tamanho adequado.
